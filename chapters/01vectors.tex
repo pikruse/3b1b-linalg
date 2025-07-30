@@ -1,0 +1,58 @@
+\section{What is a Vector?}\label{sec:vectors}
+
+\subsection{Vector Interpretations}
+
+\subsubsection{Physics}
+\begin{itemize}
+    \item Vectors are arrows pointing in space, defined only by its length and direction 
+    \item The point or origin doesn't matter
+    \item can be two dimensional or three dimensional
+\end{itemize}
+
+\subsubsection{Computer Science}
+\begin{itemize}
+    \item Vectors are ordered lists of numbers
+    \item Vector is almost synonymous with "list" in CS
+\end{itemize}
+
+\subsubsection{Mathematics}
+\begin{itemize}
+    \item A vector is anything where there's a sensible notion of adding two vectors or multiplying them by a scalar
+\end{itemize}
+
+\subsection{Coordinate Systems}
+\begin{itemize}
+    \item Coordinates of a vector are numbers, giving instructions from getting from the tail at the origin to its tip
+    \item Each entry in the vector represents movement along a specific axis / direction
+\end{itemize}
+
+\subsection{Vector Operations}
+\begin{itemize}
+    \item \textbf{Addition}: Each vector represents a certain movement, so the sum is like moving in the direction of both vectors individually (you end up on the same point)
+    $$
+        \begin{bmatrix}
+            x_1 \\
+            y_1
+        \end{bmatrix} +
+        \begin{bmatrix}
+            x_2 \\
+            y_2
+        \end{bmatrix} =
+        \begin{bmatrix}
+            x_1 + x_2 \\
+            y_1 + y_2
+        \end{bmatrix}
+    $$
+    \item \textbf{Scaling}: Think of it as "stretching" or "squeezing" a vector by a scalar. Negative signs "flip" the vector around
+    $$
+    2 \bf{v} = 2 \cdot  
+    \begin{bmatrix}
+         x \\ 
+         y 
+    \end{bmatrix} =
+    \begin{bmatrix} 
+            2x \\ 
+            2y
+    \end{bmatrix}
+    $$ 
+\end{itemize}

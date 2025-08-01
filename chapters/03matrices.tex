@@ -1,0 +1,105 @@
+\section{Linear Transformations and Matrices}
+\subsection{Transformations are Functions}
+\begin{itemize}
+    \item \textbf{Transformation}: something that takes in an input and produces an output. In the context of linear algebra, take in a vector and produce another vector.
+    \item Can think about a transformation as moving every possible input vector to its corresponding output
+\end{itemize}
+
+\subsection{What makes a transformation "linear"?}
+\begin{itemize}
+    \item a transformation is \textbf{linear} is all lines remain lines (they are not curved) and the origin remains fixed
+    \item grid lines remain parallel and evenly spaced
+\end{itemize}
+
+\subsection{Matrices}
+\begin{itemize}
+    \item we can think about all linear transformations in terms of transformations on the basis vectors
+    \item Example 1:
+    \begin{align}
+        \mathbf{v} &= -1\mathbf{i} + 2\mathbf{j} \\
+        L(\mathbf{v}) &= -1 \begin{bmatrix}
+             1 \\
+            -2 
+            \end{bmatrix} + 2 \begin{bmatrix}
+            3 \\
+            0 \\
+            \end{bmatrix} \\
+        L(\mathbf{v}) &= \begin{bmatrix}
+            -1(1) + 2(3) \\
+            -1(-2) + 2(0)
+        \end{bmatrix} \\
+        L(\mathbf{v}) &= \begin{bmatrix}
+        5 \\
+        2 
+        \end{bmatrix}
+    \end{align}
+    \item Example 2:
+    \begin{align}
+        i = \begin{bmatrix}
+        -1 \\
+        1
+        \end{bmatrix} \text{and } j = \begin{bmatrix}
+        -2 \\ 
+        -1
+        \end{bmatrix} \\
+        \text{Input vector } = \begin{bmatrix}
+        -3 \\ 
+        -1
+        \end{bmatrix} \\
+        \mathbf{i} = -3\mathbf{i} - 1\mathbf{j} \\
+        L(\mathbf{v}) = -3 [-1, 1]^T + -1 [-2, -1]^T \\
+        L(\mathbf{v}) = \begin{bmatrix}
+        -3(-1) + -1(-2) \\
+        -3(1) + -1(-1)
+        \end{bmatrix} \\
+        L(\mathbf{v}) = \begin{bmatrix}
+            5 \\
+            -2
+        \end{bmatrix}
+    \end{align}
+    \item as long as we know how the transformation acts on $i$ and $j$, we can do this with any vector
+    \item we can generalize with $x$ and $y$ as our vector now, and $a, b, c, d$ as our transformation vector components:
+    \begin{align}
+        L(\mathbf{v}) &= x \begin{bmatrix}
+            a \\
+            c \\
+        \end{bmatrix} + y \begin{bmatrix}
+            b \\
+            d \\
+        \end{bmatrix} \\
+        L(\mathbf{v}) &= \begin{bmatrix}
+            ax + by \\
+            cx + dy \\
+        \end{bmatrix}
+    \end{align}
+    \item so, we can write a two-dimensional linear transformation with just four numbers: the two coordinates where $i$ lands and the two coordinates where $j$ lands 
+    \item we can then package these four numbers into a matrix; column 1 is where $i$ lands, and column 2 is where $j$ lands
+    \item we can rewrite our previous generalization as "matrix-vector multiplication":
+    $$ \begin{bmatrix}
+        a & b \\
+        c & d
+    \end{bmatrix}
+    \begin{bmatrix}
+        x \\
+        y
+    \end{bmatrix} =
+    x \begin{bmatrix}
+        a \\
+        c
+    \end{bmatrix}
+    + y \begin{bmatrix}
+        b \\
+        d
+    \end{bmatrix} =
+    \begin{bmatrix}
+        ax + by \\
+        cx + dy \\
+    \end{bmatrix} $$
+\end{itemize}
+
+\subsection{Linearly Dependent Columns}
+\begin{itemize}
+    \item if the vectors that $i$ and $j$ land on are linearly dependent, the transformation squishes all of 2 space onto the line where they sit (one-dimensional span) 
+\end{itemize}
+
+\subsection{Formal Properties}

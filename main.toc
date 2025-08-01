@@ -12,3 +12,9 @@
 \contentsline {subsection}{\numberline {2.4}Span}{3}{subsection.2.4}%
 \contentsline {subsection}{\numberline {2.5}Vectors vs. Points}{3}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Span in 3D}{3}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Linear Transformations and Matrices}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Transformations are Functions}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}What makes a transformation "linear"?}{5}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Matrices}{5}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Linearly Dependent Columns}{6}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Formal Properties}{6}{subsection.3.5}%

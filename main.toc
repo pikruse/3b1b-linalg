@@ -18,3 +18,6 @@
 \contentsline {subsection}{\numberline {3.3}Matrices}{5}{subsection.3.3}%
 \contentsline {subsection}{\numberline {3.4}Linearly Dependent Columns}{6}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Formal Properties}{6}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Matrix Multiplication}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Recap}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Composition of Transformations}{7}{subsection.4.2}%

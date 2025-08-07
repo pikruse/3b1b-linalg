@@ -13,16 +13,114 @@
     \item can compute a composition with two matrix-vector multiplies
     $$ AB = C \rightarrow A(Bv) = C(v) $$
     \item \textbf{Multiplying two matrices has the geometric meaning of applying one transformation after another.}
-    $$ \begin{bmatrix}
-    1 & 1 \\
-    0 & 1 
-    \end{bmatrix}
-    \begin{bmatrix}
-    0 & -1 \\
-    1 & 0 
-    \end{bmatrix}
-    = \begin{bmatrix}
-    1 & 0 \\
-    1 & 1
-    \end{bmatrix} $$
+    \begin{example}
+        Composition of a rotation and a shear:
+        $$ f(x) = \text{shear} \\
+        g(x) = \text{rotate} \\
+        f(g(x)) = \text{shear}(\text{rotate}(x)) $$
+        $$ \begin{bmatrix}
+        1 & 1 \\
+        0 & 1 
+        \end{bmatrix}
+        \begin{bmatrix}
+        0 & -1 \\
+        1 & 0 
+        \end{bmatrix}
+        = \begin{bmatrix}
+        1 & -1 \\
+        1 & 0
+        \end{bmatrix} $$
+    \end{example}
+    \begin{example}
+        Multiply two matrices, $M_1$ and $M_2$. First, examine how the $i$ vector is transformed:
+        $$ M_2(M_1(i)) = \begin{bmatrix}
+        0 & 2 \\
+        1 & 0 
+        \end{bmatrix}
+        \begin{bmatrix}
+        1 & -2 \\
+        1 & 0 
+        \end{bmatrix}
+        \begin{bmatrix}
+        1 \\
+        0 
+        \end{bmatrix} \newline
+        = 1 \begin{bmatrix}
+        0 \\
+        1 
+        \end{bmatrix} +
+        1 \begin{bmatrix}
+        2 \\
+        0
+        \end{bmatrix} =
+        \begin{bmatrix}
+        2 \\
+        1
+        \end{bmatrix} $$
+        Apply the same process to $j$ to see where it lands:
+        $$ M_2(M_1(j)) = \begin{bmatrix}
+        0 & 2 \\
+        1 & 0
+        \end{bmatrix}
+        \begin{bmatrix}
+        1 & -2 \\
+        1 & 0 
+        \end{bmatrix}
+        \begin{bmatrix}
+        0 \\
+        1
+        \end{bmatrix} \\
+        = -2 \begin{bmatrix}
+        0 \\
+        1
+        \end{bmatrix}
+        + 0 \begin{bmatrix}
+            2 \\
+            0
+        \end{bmatrix} \\
+        = \begin{bmatrix}
+        0 \\
+        -2
+        \end{bmatrix} $$
+        We can represent the matrix-vector product of the $i$ and $j$ vectors as a matrix:
+        $$ M_2(M_1) = \begin{bmatrix}
+        2 & 0 \\
+        1 & -2
+        \end{bmatrix}$$ 
+    \end{example}
+\end{itemize}
+
+\subsection{General Form}
+\begin{itemize}
+    \item Using the above example, we express a matrix multiplication in general form:
+    \begin{example}
+        We can express a matrix multiplication in general form:
+        \begin{align}
+            M_2(M_1) &= \begin{bmatrix}
+                a & b \\
+                c & d
+            \end{bmatrix}
+            \begin{bmatrix}
+                e & f \\
+                g & h 
+            \end{bmatrix} \\
+            &= \begin{bmatrix}
+                ae + bg & af + bh \\
+                ce + dg & cf + dh
+            \end{bmatrix}
+        \end{align}
+    The resulting matrix is equivalent to vector products $M_2 M_{1_{:, 1}}$ and $M_2 M_{1_{:, 2}}$, where $M_{1_{:, 1}}$ and $M_{1_{:, 2}}$ are the first and second columns of $M_1$.
+    \end{example}
+    \item In short, matrix multiplication \textit{is} multiplying one transformation after another.
+\end{itemize}
+
+\subsection{Noncommutativity}
+\begin{itemize}
+    \item The order of transformations changes how the final space looks
+    \item Therefore, matrix multiplication is not commutative: $AB \neq BA$
+\end{itemize}
+
+\subsection{Associativity}
+\begin{itemize}
+    \item $(AB)C = A(BC)$
 \end{itemize}

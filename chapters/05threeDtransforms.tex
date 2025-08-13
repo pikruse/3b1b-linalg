@@ -30,3 +30,27 @@ Principles in 2 dimensions extend to 3+ dimensions
     \item We can think of each linear transformation in terms of how it changes the basis vectors.
     \item In a $3 \times 3$ matrix, each column represents instructions for how to scale each basis vector.
 \end{itemize}
+\begin{example}
+    What is the transformation that rotates space 90 degrees counterclockwise around the z-axis?
+
+    Since each column of our matrix represents how the basis vectors are transformed, we can specify what the $x, y$, and $z$ coordinates will look like. $x and y$ will be rotated, while $z$ will be unchanged:
+    $$ x' = \begin{bmatrix}
+    0 \\
+    -1 \\
+    0 
+    \end{bmatrix};
+    y' = \begin{bmatrix}
+    1 \\
+    0 \\
+    0
+    \end{bmatrix}; 
+    z' = z \rightarrow T = \begin{bmatrix}
+    0 & 1 & 0 \\
+    -1 & 0 & 0 \\
+    0 & 0 & 1
+    \end{bmatrix}$$
+\end{example}
+
+\subsection{Combining Transformations}
+The logic for two dimensions applies once again: two $3 \times 3$ matrices being multiplied is equivalent to transforming the basis vectors first by the
+leftmost matrix, and next by the right matrix.

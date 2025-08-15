@@ -1,0 +1,82 @@
+\section{The Determinant}
+\subsection{Scaling Area}
+\begin{itemize}
+    \item It's useful to measure how much a linear transformation scales area, either stretching or squishing space
+    \begin{example}
+        Take the matrix $\begin{bmatrix} 3 & 0 \\ 0 & 2 \end{bmatrix}$. This scales $i$ by a factor of $3$ and $j$ by a factor of 2.\\
+        Originally, we can think of the unit vectors as forming a square with area $1$. \\
+        After scaling, this becomes a $ 2 \times 3 $ rectangle, so area of 6.
+    \end{example}
+    \item If you know how the area of the unit square changes, you can tell how the area of \textit{any} region in the space changes.
+    \item Any shape that's not square can be approximated by a bunch of squares as well
+    \item \textbf{The Determinant} is the scaling factor by which a linear transformation changes areas
+    \item The determinant of 2D transformation is 0 if it squishes space onto a line or a single point
+    \begin{itemize}
+        \item checking if the determinant is 0 lets us compute whether or not the transformation squishes everything into a smaller dimension
+    \end{itemize}
+\end{itemize}
+
+\subsection{Negative Determinant}
+\begin{itemize}
+    \item Determinants can be negative, which happens when the basis vectors are "flipped"
+    \begin{itemize}
+        \item $i$ is usually to the right of $j$, so if $j$ ends up to the right of $i$, we say it "inverts the orientation of space"
+        \item When the orientation is inverted, the determinant is negative
+        \item The absolute value is still the area scaling factor
+    \end{itemize}
+    \item as $i$ gets closer to $j$ in a series of transformations, the determinant approaches 0; when the completely align, it is 0. So if $i$ keeps going the same direction, it makes sense that the determinant would decrease.
+\end{itemize}
+
+\subsection{In Three Dimensions}
+\begin{itemize}
+    \item just as a 2D determinant tells us the scaling factor for area, a 3D determinant tells us the scaling factor for volume
+    \item a determinant of 0 in 3D means the shape is squished into something with zero volume: a plane, a line, or a point 
+\end{itemize}
+
+\subsection{Negative Determinants in 3D}
+\begin{itemize}
+    \item Use the "three finger rule" to determine if the orientation is inverted. 
+\end{itemize}
+
+\subsection{Computation}
+\subsubsection{Two Dimensions}
+For a $2 \times 2$ matrix:
+$$ \det \Bigg( \begin{bmatrix} a & b \\ c & d \end{bmatrix} \Bigg) = ad - bc $$
+\begin{itemize}
+    \item if $b$ and $c$ were 0, then $a$ would tell you how much $i$ is stretched in the $x$ direction, and $d$ would tell you how much $j$ is scaled in the $y$ direction:
+    $$ \det \Bigg( \begin{bmatrix} 
+        a & 0 \\ 
+        0 & d
+    \end{bmatrix}\Bigg) = ad - 0 \cdot 0$$
+
+    \item if only one of $b$ or $c$ is 0, you have a parallelogram with base $a$ and height $d$, so the area is still $ad$:
+    $$ \det \Bigg( \begin{bmatrix} 
+        a & 0 \\ 
+        0 & d
+    \end{bmatrix}\Bigg) = ad - b \cdot 0$$
+    \item if both $b$ and $c$ are nonzero, the term $bc$ represents how much the rectangle is stretched or squished in the diagonal direction.
+\end{itemize}
+
+\subsubsection{Three Dimensions}
+For a $3 \times 3$ matrix:
+$$ \det \Bigg( \begin{bmatrix}
+    a & b & c \\ 
+    d & e & f \\ 
+    g & h & i
+\end{bmatrix}\Bigg) = 
+a \det \Bigg( \begin{bmatrix}
+    e & f \\ 
+    h & i
+\end{bmatrix} \Bigg) - b \det \Bigg( \begin{bmatrix}
+    d & f \\ 
+    g & i
+\end{bmatrix} \Bigg) + c \det \Bigg( \begin{bmatrix}
+    d & e \\ 
+    g & h
+\end{bmatrix} \Bigg)$$
+
+\subsection{Matrix Multiplication}
+\begin{itemize}
+    \item if you multiply two matrices together, the determinant of the resulting matrix is the same as the product of the determinants of the original two matrices:
+    $$ \det(M_1 M_2) = \det(M_1) \det(M_2) $$
+\end{itemize}
